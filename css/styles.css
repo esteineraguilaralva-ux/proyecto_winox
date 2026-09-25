@@ -1,0 +1,381 @@
+/*CONFIGURACIÓN GENERAL*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0d10;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* BARRA DE NAVEGACIÓN*/
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #080a0c;
+    border-bottom: 1px solid #2b333b;
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MENÚ */
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #f2b900;
+    color: black;
+}
+
+
+/*PORTADA PRINCIPAl*/
+
+.hero {
+    height: 100vh;
+
+    padding: 150px 7% 50px;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("winox-fondo.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* TEXTO DE LA PORTADA */
+
+.hero-content {
+    max-width: 650px;
+}
+
+.kicker {
+    color: #f2b900;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 15px 0;
+}
+
+h1 span {
+    color: #f2b900;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #d2d7dc;
+}
+
+
+/*BOTONES*/
+
+.btns {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 20px;
+    margin-right: 10px;
+
+    border: 1px solid #f2b900;
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+
+/* BOTÓN AMARILLO */
+
+.btn.primary {
+    background-color: #f2b900;
+    color: black;
+}
+
+
+/* BOTÓN TRANSPARENTE */
+
+.btn.secondary {
+    background-color: transparent;
+    color: white;
+}
+
+
+/* EFECTO DEL BOTÓN */
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/*SECCIONES*/
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title p {
+    color: #aab2ba;
+    margin-top: 10px;
+}
+
+
+/* TÍTULOS */
+
+h2 {
+    font-size: 40px;
+}
+
+
+/*TARJETAS*/
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background-color: #11161b;
+
+    border: 1px solid #2b333b;
+    border-radius: 10px;
+    
+    padding: 25px;
+}
+
+.card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.imagge{
+    width: 200px;
+    height: 200px;
+}
+
+
+/*BANDA*/
+
+.band {
+    background-color: #0e1318;
+
+    border-top: 1px solid #2b333b;
+    border-bottom: 1px solid #2b333b;
+}
+
+
+/*PORTADA DE OTRAS PÁGINAS*/
+
+.page-hero {
+    padding: 160px 25px 80px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("winox-fondo.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.page-hero .inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.page-hero h1 {
+    max-width: 800px;
+}
+
+
+/*LISTAS*/
+
+.list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.list li {
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background-color: #0c1115;
+
+    border-left: 3px solid #f2b900;
+
+    color: #d9dee3;
+}
+
+
+/*PRODUCTOS*/
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.product {
+    min-height: 220px;
+
+    padding: 25px;
+
+    background-color: #11161b;
+
+    border: 1px solid #2b333b;
+    border-radius: 10px;
+}
+
+.product strong {
+    color: #f2b900;
+}
+
+
+/*CONTACTO*/
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* FORMULARIO */
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #090c0f;
+
+    border: 1px solid #2b333b;
+
+    border-radius: 5px;
+
+    color: white;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+
+/*PIE DE PÁGINA */
+
+footer {
+    padding: 30px;
+
+    border-top: 1px solid #2b333b;
+
+    text-align: center;
+
+    color: #89939d;
+}
+
+.small {
+    color: #89939d;
+    font-size: 14px;
+}
+
+
+/* CELULARES*/
+
+@media (max-width: 800px) {
+
+    .nav-inner {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 180px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+}
