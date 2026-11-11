@@ -1,381 +1,96 @@
-/*CONFIGURACIÓN GENERAL*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0a0d10;
-    color: white;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-
-/* BARRA DE NAVEGACIÓN*/
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #080a0c;
-    border-bottom: 1px solid #2b333b;
-}
-
-.nav-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 25px;
-
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 40%, #415a77 100%);
+    color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    transition: background 0.6s ease-in-out;
 }
 
-/* MENÚ */
-
-nav {
-    display: flex;
-    gap: 10px;
+main {
+    flex: 1;
 }
 
-nav a {
-    padding: 10px 15px;
-    border-radius: 5px;
+.text-accent {
+    color: #00e5ff !important;
 }
 
-nav a:hover {
-    background-color: #f2b900;
-    color: black;
+.card-hover {
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-
-/*PORTADA PRINCIPAl*/
-
-.hero {
-    height: 100vh;
-
-    padding: 150px 7% 50px;
-
-    display: flex;
-    align-items: center;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url("winox-fondo.png");
-
-    background-size: cover;
-    background-position: center;
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0, 229, 255, 0.25) !important;
+    border-color: #00e5ff !important;
 }
 
-
-/* TEXTO DE LA PORTADA */
-
-.hero-content {
-    max-width: 650px;
+.btn-custom-primary {
+    background: linear-gradient(45deg, #00e5ff, #0072ff);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
 }
 
-.kicker {
-    color: #f2b900;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+.btn-custom-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+    color: #ffffff;
 }
 
-h1 {
-    font-size: 60px;
-    margin: 15px 0;
+.btn-custom-secondary {
+    border: 2px solid #00e5ff;
+    color: #00e5ff;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
 }
 
-h1 span {
-    color: #f2b900;
+.btn-custom-secondary:hover {
+    background: #00e5ff;
+    color: #0d1b2a;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
 }
 
-.hero p {
-    font-size: 18px;
-    color: #d2d7dc;
+.img-zoom {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease;
 }
 
-
-/*BOTONES*/
-
-.btns {
-    margin-top: 30px;
+.img-zoom:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
 }
 
-.btn {
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.badge-float {
+    animation: floatAnimation 3s ease-in-out infinite;
     display: inline-block;
-
-    padding: 13px 20px;
-    margin-right: 10px;
-
-    border: 1px solid #f2b900;
-    border-radius: 5px;
-
-    font-weight: bold;
 }
 
-
-/* BOTÓN AMARILLO */
-
-.btn.primary {
-    background-color: #f2b900;
-    color: black;
+.glass-nav {
+    background: rgba(13, 27, 42, 0.9) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.4s ease;
 }
 
-
-/* BOTÓN TRANSPARENTE */
-
-.btn.secondary {
-    background-color: transparent;
-    color: white;
+.glass-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
 }
-
-
-/* EFECTO DEL BOTÓN */
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-
-/*SECCIONES*/
-
-.section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 80px 25px;
-}
-
-.section-title {
-    margin-bottom: 35px;
-}
-
-.section-title p {
-    color: #aab2ba;
-    margin-top: 10px;
-}
-
-
-/* TÍTULOS */
-
-h2 {
-    font-size: 40px;
-}
-
-
-/*TARJETAS*/
-
-.grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.card {
-    background-color: #11161b;
-
-    border: 1px solid #2b333b;
-    border-radius: 10px;
-    
-    padding: 25px;
-}
-
-.card .icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-    width: 30px;
-    height: 30px;
-}
-
-.imagge{
-    width: 200px;
-    height: 200px;
-}
-
-
-/*BANDA*/
-
-.band {
-    background-color: #0e1318;
-
-    border-top: 1px solid #2b333b;
-    border-bottom: 1px solid #2b333b;
-}
-
-
-/*PORTADA DE OTRAS PÁGINAS*/
-
-.page-hero {
-    padding: 160px 25px 80px;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url("winox-fondo.png");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.page-hero .inner {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.page-hero h1 {
-    max-width: 800px;
-}
-
-
-/*LISTAS*/
-
-.list {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.list li {
-    padding: 12px;
-
-    margin-bottom: 10px;
-
-    background-color: #0c1115;
-
-    border-left: 3px solid #f2b900;
-
-    color: #d9dee3;
-}
-
-
-/*PRODUCTOS*/
-
-.products {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.product {
-    min-height: 220px;
-
-    padding: 25px;
-
-    background-color: #11161b;
-
-    border: 1px solid #2b333b;
-    border-radius: 10px;
-}
-
-.product strong {
-    color: #f2b900;
-}
-
-
-/*CONTACTO*/
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-}
-
-
-/* FORMULARIO */
-
-form {
-    display: grid;
-    gap: 14px;
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-
-    padding: 14px;
-
-    background-color: #090c0f;
-
-    border: 1px solid #2b333b;
-
-    border-radius: 5px;
-
-    color: white;
-}
-
-textarea {
-    min-height: 150px;
-}
-
-
-/*PIE DE PÁGINA */
 
 footer {
-    padding: 30px;
-
-    border-top: 1px solid #2b333b;
-
-    text-align: center;
-
-    color: #89939d;
-}
-
-.small {
-    color: #89939d;
-    font-size: 14px;
-}
-
-
-/* CELULARES*/
-
-@media (max-width: 800px) {
-
-    .nav-inner {
-        flex-direction: column;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero {
-        padding-top: 180px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 45px;
-    }
-
+    background-color: #080f18;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
